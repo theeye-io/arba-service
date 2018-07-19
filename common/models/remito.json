@@ -1,0 +1,227 @@
+{
+  "name": "remito",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "strictObjectIDCoercion": true,
+    "validateUpsert": true
+  },
+  "properties": {
+    "cuit_empresa":{
+      "type": "number",
+      "length": 11,
+      "required": true
+    },
+    "fecha_emision": {
+      "type": "date",
+      "required": true
+    },
+    "codigo_unico_dgi": {
+      "length": 1,
+      "type": "string",
+      "required": true
+    },
+    "codigo_unico_tipo": {
+      "length": 2,
+      "type": "string",
+      "required": true
+    },
+    "codigo_unico_prefijo": {
+      "length": 4,
+      "type": "string",
+      "required": true
+    },
+    "codigo_unico_numero": {
+      "length": 8,
+      "type": "string",
+      "required": true
+    },
+    "fecha_salida_transporte": {
+      "type": "date",
+      "required": true
+    },
+    "hora_salida_transporte": {
+      "type": "string"
+    },
+    "sujeto_generador": {
+      "type": "string",
+      "required": true
+    },
+    "destinatario_consumidor_final": {
+      "type": "boolean",
+      "required": true
+    },
+    "destinatario_tipo_documento": {
+      "type": "string",
+      "max": 3,
+      "default": " "
+    },
+    "destinatario_documento": {
+      "type": "number",
+      "length": 11,
+      "default": " "
+    },
+    "destinatario_cuit": {
+      "type": "number",
+      "length": 11
+    },
+    "destinatario_razon_social": {
+      "type": "string",
+      "max": 50
+    },
+    "destinatario_tenedor": {
+      "type": "boolean",
+      "required": true
+    },
+    "destino_domicilio_calle": {
+      "type": "string",
+      "max": 40,
+      "required": true
+    },
+    "destino_domicilio_numero": {
+      "type": "string",
+      "max": 5
+    },
+    "destino_domicilio_comple": {
+      "type": "string",
+      "max": 5
+    },
+    "destino_domicilio_piso": {
+      "type": "string",
+      "max": 5
+    },
+    "destino_domicilio_dto":{
+      "type": "string",
+      "max": 4
+    },
+    "destino_domicilio_barrio":{
+      "type": "string",
+      "max": 30
+    },
+    "destino_domicilio_codigopostal":{
+      "type": "string",
+      "max": 8,
+      "required": true
+    },
+    "destino_domicilio_localidad":{
+      "type": "string",
+      "max": 50,
+      "required": true
+    },
+    "destino_domicilio_provincia":{
+      "type": "string",
+      "max": 1,
+      "required": true
+    },
+    "propio_destino_domicilio_codigo":{
+      "type": "string",
+      "max": 20
+    },
+    "entrega_domicilio_origen":{
+      "type": "string",
+      "max": 2,
+      "required": true
+    },
+    "origen_cuit":{
+      "type": "number",
+      "length": 11,
+      "required": true
+    },
+    "origen_razon_social":{
+      "type": "string",
+      "length": 50,
+      "required": true
+    },
+    "emisor_tenedor":{
+      "type": "boolean",
+      "required": true
+    },
+    "origen_domicilio_calle": {
+      "type": "string",
+      "max": 40,
+      "required": true
+    },
+    "origen_domicilio_numero": {
+      "type": "string",
+      "max": 5
+    },
+    "origen_domicilio_comple": {
+      "type": "string",
+      "max": 5
+    },
+    "origen_domicilio_piso": {
+      "type": "string",
+      "max": 5
+    },
+    "origen_domicilio_dto":{
+      "type": "string",
+      "max": 4
+    },
+    "origen_domicilio_barrio":{
+      "type": "string",
+      "max": 30
+    },
+    "origen_domicilio_codigopostal":{
+      "type": "string",
+      "max": 8,
+      "required": true
+    },
+    "origen_domicilio_localidad":{
+      "type": "string",
+      "max": 50,
+      "required": true
+    },
+    "origen_domicilio_provincia":{
+      "type": "string",
+      "max": 1,
+      "required": true
+    },
+    "transportista_cuit":{
+      "type": "number",
+      "length": 11,
+      "required": true
+    },
+    "tipo_recorrido":{
+      "type": "string",
+      "max": 1,
+      "default": " "
+    },
+    "recorrido_localidad":{
+      "type": "string",
+      "max": 50
+    },
+    "recorrido_calle":{
+      "type": "string",
+      "max": 40
+    },
+    "recorrido_ruta":{
+      "type": "string",
+      "max": 40
+    },
+    "patente_vehiculo":{
+      "type": "string",
+      "max": 7
+    },
+    "patente_acoplado":{
+      "type": "string",
+      "max": 7
+    },
+    "producto_no_term_dev":{
+      "type": "boolean",
+      "required": true
+    },
+    "importe":{
+      "type": "number",
+      "max": 11,
+      "default": 0
+    },
+    "productos": {
+      "type": "array",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

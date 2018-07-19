@@ -1,0 +1,58 @@
+{
+  "name": "cot",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "strictObjectIDCoercion": true,
+    "validateUpsert": true
+  },
+  "properties": {
+    "cuit_empresa": {
+      "type": "number",
+      "length": 11,
+      "required": true
+    },
+    "numero_planta": {
+      "type": "number",
+      "length": 3,
+      "required": true
+    },
+    "numero_puerta": {
+      "type": "number",
+      "length": 3,
+      "required": true
+    },
+    "fecha_emision": {
+      "type": "date",
+      "default": "now"
+    },
+    "numero_secuencia":{
+      "type": "number"
+    },
+    "remitos": {
+      "type": "array",
+      "required": true
+    },
+    "creado": {
+      "type": "date",
+      "required": true
+    },
+    "actualizado": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "creado",
+      "updatedAt": "actualizado",
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

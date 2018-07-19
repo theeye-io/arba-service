@@ -1,0 +1,50 @@
+{
+  "name": "producto",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "strictObjectIDCoercion": true,
+    "validateUpsert": true
+  },
+  "properties": {
+    "codigo_unico_producto": {
+      "type": "string",
+      "max": 6,
+      "required": true
+    },
+    "rentas_codigo_unidad_medida": {
+      "type": "string",
+      "length": 1,
+      "required": true
+    },
+    "cantidad": {
+      "type": "number",
+      "max": 15,
+      "required": true
+    },
+    "propio_codigo_producto": {
+      "type": "string",
+      "max": 25,
+      "required": true
+    },
+    "propio_descripcion_producto": {
+      "type": "string",
+      "max": 40,
+      "required": true
+    },
+    "propio_descripcion_unidad_medida": {
+      "type": "string",
+      "max": 20,
+      "required": true
+    },
+    "cantidad_ajustada": {
+      "type": "number",
+      "max": 15,
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

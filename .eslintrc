@@ -1,0 +1,6 @@
+{
+  "extends": "loopback",
+   "rules": {
+        "camelcase": [2, {"properties": "never"}]
+    }
+}

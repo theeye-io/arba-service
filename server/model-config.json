@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "../node_modules/loopback-ds-timestamp-mixin"
+    ]
+  },
+  "User": {
+    "dataSource": "memory-db",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "memory-db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "memory-db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "memory-db",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "memory-db",
+    "public": false
+  },
+  "cot": {
+    "dataSource": "arba-service-db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "*": false,
+          "newCot": true
+        }
+      }
+    }
+  },
+  "remito": {
+    "dataSource": "memory-db",
+    "public": false
+  },
+  "producto": {
+    "dataSource": "memory-db",
+    "public": false
+  }
+}
