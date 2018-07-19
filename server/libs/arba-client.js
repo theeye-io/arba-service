@@ -3,6 +3,7 @@ const _ = require('lodash');
 const request = require('request-promise');
 const moment = require('moment');
 const fs = require('fs');
+const app = require('../server');
 
 const sendCOT = function(cot) {
   return new Promise((resolve, reject) => {
@@ -14,16 +15,16 @@ const sendCOT = function(cot) {
     }
 
     request.post({
-      url: 'http://cot.test.arba.gov.ar/TransporteBienes/SeguridadCliente/presentarRemitos.do',
+      url: app.get('arba').uri,
       formData: {
-        user: null,
-        password: null,
+        user: app.get('arba').user,
+        password: app.get('arba').password,
         file: fs.createReadStream(filename),
       },
     }).then((response) => {
-      console.log(response);
+      return resolve(response);
     }).catch((error) => {
-      console.log(error);
+      return reject(error);
     });
 
     return resolve(filename);
@@ -48,7 +49,6 @@ const toFile = function(cot) {
 
   const fileName = `/tmp/TB_${cuit}_${planta}${puerta}_${fecha}_${seq}.txt`;
   const fileContent = (header + body + footer);
-  console.log(fileContent);
   fs.writeFileSync(fileName, fileContent, 'utf8');
   return fileName;
 };

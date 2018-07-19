@@ -34,7 +34,7 @@
     "public": false
   },
   "cot": {
-    "dataSource": "arba-service-db",
+    "dataSource": "memory-db",
     "public": true,
     "options": {
       "remoting": {
