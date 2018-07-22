@@ -1,3 +1,3 @@
 #!/bin/bash
-/src/theeye-agent/run.sh
+/src/theeye-agent/run.sh &
 npm start
