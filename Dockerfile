@@ -1,5 +1,5 @@
-FROM quay.io/aptible/nodejs:v8.1.x
-MAINTAINER Javier Ailbirt.
+#FROM quay.io/aptible/nodejs:v8.1.x
+FROM interactar/theeye-agent:node8
 
 
 ENV destDir /src/arba-service
@@ -23,4 +23,6 @@ RUN chmod -R 1777 .tmp
 # Bundle app source
 EXPOSE 3000
 #By default run prod, If development is requiered This command would be override by docker-compose up
-CMD [ "npm", "start" ]
+#CMD [ "/src/theeye-agent/run.sh" ]
+#CMD [ "npm", "start" ]
+CMD [ "./runServiceAndAgent.sh" ]
