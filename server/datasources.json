@@ -2,16 +2,4 @@
   "memory-db": {
     "name": "memory-db",
     "connector": "memory"
-  },
-  "arba-service-db": {
-    "host": "localhost",
-    "port": 27017,
-    "url": "mongodb://localhost:27017/arba-service",
-    "database": "arba-service",
-    "password": "",
-    "name": "arba-service-db",
-    "user": "",
-    "connector": "loopback-connector-mongodb",
-    "debug": true
-  }
-}
+  }}
