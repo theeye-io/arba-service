@@ -4,6 +4,7 @@ const request = require('request-promise');
 const moment = require('moment');
 const fs = require('fs');
 const app = require('../server');
+const parseString = require('xml2js').parseString;
 
 const sendCOT = function(cot) {
   return new Promise((resolve, reject) => {
@@ -22,12 +23,17 @@ const sendCOT = function(cot) {
         file: fs.createReadStream(filename),
       },
     }).then((response) => {
-      return resolve(response);
+      parseString(response, function(error, result) {
+        if (error || result.TBError)
+          return reject({
+            code: result.TBError.codigoError[0],
+            message: result.TBError.mensajeError[0],
+          });
+        return resolve(result);
+      });
     }).catch((error) => {
       return reject(error);
     });
-
-    return resolve(filename);
   });
 };
 
