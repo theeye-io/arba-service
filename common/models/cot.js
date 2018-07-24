@@ -32,11 +32,14 @@ module.exports = function(Cot) {
       return cot.save();
     }).then((cot) => {
       return ArbaClient.sendCOT(cot);
-    }).then((a) => {
-      console.log(a);
-      return next(null, cot);
+    }).then((response) => {
+      return next(null, response);
     }).catch((error) => {
-      return next(error);
+      return next({
+        status: 400,
+        code: error.code || 'INTERNAL',
+        message: error.message || 'Unkwon error',
+      });
     });
   };
 
