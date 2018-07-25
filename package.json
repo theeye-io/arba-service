@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node .",
-    "local": "DEBUG=api:* NODE_ENV=local ./node_modules/.bin/nodemon --watch server  .",
+    "local": "DEBUG=api:* NODE_ENV=local ./node_modules/.bin/nodemon --watch server --watch ./server/config.json  .",
     "posttest": "npm run lint && nsp check"
   },
   "dependencies": {
