@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     mongodb-clients \
     git-core \
     libkrb5-dev \
+    curl \
   && rm -rf /var/lib/apt/lists/*
 COPY package.json .
 RUN npm install --loglevel error
