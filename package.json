@@ -7,8 +7,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "./node_modules/.bin/nodemon --watch server --watch /src/server/config.json  .",
-    "local": "DEBUG=api:* NODE_ENV=local ./node_modules/.bin/nodemon --watch server --watch ./server/config.json  .",
+    "start": "./node_modules/.bin/nodemon --watch server .",
+    "local": "DEBUG=api:* NODE_ENV=local ./node_modules/.bin/nodemon .",
     "posttest": "npm run lint && nsp check"
   },
   "dependencies": {

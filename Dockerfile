@@ -1,5 +1,5 @@
-#FROM quay.io/aptible/nodejs:v8.1.x
-FROM interactar/theeye-agent:node8
+FROM quay.io/aptible/nodejs:v8.1.x
+#FROM interactar/theeye-agent:node8
 
 
 ENV destDir /src/arba-service
